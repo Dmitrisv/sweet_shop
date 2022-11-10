@@ -33,7 +33,7 @@ Route::get("/profile",[MainPageController::class,'profile']);
 
 Route::get('/view/{id}',[MainPageController::class,'viewproduct']);
 
-
+Route::get('/cart',[MainPageController::class,'cart']);
 
 Route::get('/test',function(){
     return view("welcome");

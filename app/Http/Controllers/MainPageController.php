@@ -32,6 +32,11 @@ class MainPageController extends Controller
     {
         $item = Item::find($request->id);
         return view('product',compact('item'));
-        // dd($item->title);
+    }
+
+    public function cart()
+    {
+        $cart = auth()->user()->get_items_cart;
+        return view('cart',compact('cart'));
     }
 }
