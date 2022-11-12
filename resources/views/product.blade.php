@@ -14,7 +14,8 @@
     <h4>Категория: {{$item->category}}</h4>
     <h4>Ингредиенты: {{$item->ingredients}}</h4>
     <h4>В наличии: {{$item->count}}шт.</h4>
-    <form action="" method="">
+    <form action="/storetocart?product_id={{$item->id}}" method="POST">
+        @csrf
         <input type="number" name="count" max="{{$item->count}}" id="">
         <input type="submit" value="Добавить в корзину">
     </form>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Item;
+use App\Models\User_item;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,7 +37,35 @@ class MainPageController extends Controller
 
     public function cart()
     {
-        $cart = auth()->user()->get_items_cart;
-        return view('cart',compact('cart'));
+        if(Auth::check()){
+            $cart = auth()->user()->get_items_cart;
+            return view('cart',compact('cart'));
+        }
+        else{
+            return view("cart");
+        }
+
     }
+    public function addtocart(Request $request)
+    {
+
+        $cart = User_item::query()->create([
+            'user_id'=>$request->product_id,
+            'item_id'=>$request->product_id,
+            'count'=>$request->count
+            
+        ]);
+        return redirect()->intended('/');
+    }
+
+
+    public function about()
+    {
+        $posts = Item::all()->where('created_at','<=',now())->take(5);
+        return view('about',compact('posts'));
+    }
+
+
+
+
 }

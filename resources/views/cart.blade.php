@@ -7,9 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    @auth
     @foreach($cart as $item)
 
     <div>{{$item->title}} - {{$item->pivot->count}} шт.</div>
     @endforeach
+
+    @endauth
+    @guest
+    <div>Сначало авторизируйтесь</div>
+    @endguest
 </body>
 </html>

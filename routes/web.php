@@ -35,6 +35,13 @@ Route::get('/view/{id}',[MainPageController::class,'viewproduct']);
 
 Route::get('/cart',[MainPageController::class,'cart']);
 
+Route::get('/about',[MainPageController::class,'about']);
+
+
+
+
+Route::post('/storetocart',[MainPageController::class,'addtocart']);
+
 Route::get('/test',function(){
     return view("welcome");
 });

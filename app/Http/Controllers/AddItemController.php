@@ -28,5 +28,6 @@ class AddItemController extends Controller
                 'public',
             );
         }
+    return redirect('/');
     }
 }
