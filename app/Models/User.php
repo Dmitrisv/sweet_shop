@@ -44,4 +44,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+
+    public function get_items_cart()
+    {
+        return $this->belongsToMany(Item::class, 'user_items')->withPivot('count');
+    }
+
+
+
+
 }

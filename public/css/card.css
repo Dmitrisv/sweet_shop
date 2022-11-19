@@ -1,18 +1,6 @@
-/* .product {
+.swiper-slide img {
     width: 240px;
-    display: flex;
-    flex-direction: row;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px #2b2b2c;
-    padding: 1%;
-    margin: 2%;
-} */
-
-.grid-item {
-    display: grid;
-}
-
-.img__product {
-    width: 240px;
-    height: auto;
+    height: 240px;
+    object-fit: cover;
+    margin-left: 40%;
 }
