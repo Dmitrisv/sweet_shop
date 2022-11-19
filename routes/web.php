@@ -33,9 +33,9 @@ Route::get("/profile",[MainPageController::class,'profile']);
 
 Route::get('/view/{id}',[MainPageController::class,'viewproduct']);
 
-Route::get('/cart',[MainPageController::class,'cart']);
+Route::get('/cart',[MainPageController::class,'cart'])->name('cart');
 
-Route::get('/about',[MainPageController::class,'about']);
+Route::get('/about',[MainPageController::class,'about'])->name('about');
 
 
 

@@ -1,20 +1,6 @@
-.card__photo {
-    height: 160px;
-    width: auto;
-    border-radius: 12px;
-}
-.card {
-    box-shadow: 0px 5px 3px rgb(226, 226, 226);
-    border-radius: 12px;
-    margin: 1rem;
-    padding: 1rem;
-}
-.card a {
-    color: black;
-    text-decoration: none;
-}
-
-.container {
-    display: flex;
-    margin: 2rem;
+.swiper-slide img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    margin-left: 40%;
 }
