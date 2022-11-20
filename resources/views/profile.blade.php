@@ -1,12 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
-</head>
-<body>
+@extends('layouts.main')
+@section('title')
+<title>О нас </title>
+@endsection
+
+@section('content')
     @auth
 
     <div class="username">Имя пользователя: {{$user->username}}</div>
@@ -14,5 +11,4 @@
     <div class="email">Ваша электронная почта: {{$user->email}}</div>
     <div class="created_at  ">Аккаунт создан в: {{$user->created_at}}</div>
     @endauth
-</body>
-</html>
+@endsection

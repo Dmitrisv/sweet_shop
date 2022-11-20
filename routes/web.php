@@ -16,19 +16,20 @@ use App\Http\Controllers\MainPageController;
 |
 */
 
-Route::get('/',[MainPageController::class, 'index']);
+Route::get('/',[MainPageController::class, 'index'])->name('menu');
 
 
-Route::get("/auth/reg",[AuthController::class,'create']);
+Route::get("/auth/reg",[AuthController::class,'create'])->name('reg');
 Route::post("/auth/reg",[AuthController::class,'store']);
 
 Route::get("/auth/login",[AuthController::class,'getformlogon']);
-Route::post("/auth/login",[AuthController::class,'log']);
-Route::get("/logout",[AuthController::class,'logout']);
+Route::post("/auth/login",[AuthController::class,'log'])->name('logon');
+Route::get("/logout",[AuthController::class,'logout'])->name('logout');
 
 Route::post('/add_item',[AddItemController::class,'store']);
 
-Route::get("/profile",[MainPageController::class,'profile']);
+Route::get("/profile",[MainPageController::class,'profile'])->name('profile');
+Route::get("/location",[MainPageController::class,'locate'])->name('location');
 
 
 Route::get('/view/{id}',[MainPageController::class,'viewproduct']);

@@ -1,27 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Магазин Вкусняшки</title>
-    <link rel="stylesheet" href="{{ asset('css/card.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head>
+@extends('layouts.main')
+@section('title')
+<title>Меню </title>
+@endsection
 
-<body>
-
-<nav class="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand">Магазин вкусняшки</a>
-    <a class="nav-item me-auto" href='{{ route("about") }}'>
-        О нас
-</a>
-    <form class="d-flex">
-        <a href='{{ route("about") }}'>Корзина</a>
-    </form>
-  </div>
-</nav>
+@section('content')
 
     <div class="container">
         <div><h4>Меню</h4></div>
@@ -64,8 +46,6 @@
     @endforeach
     </div>
     </div>
-</body>
-</html>
-
+@endsection
 
 

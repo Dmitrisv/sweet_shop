@@ -1,21 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+@extends('layouts.main')
+@section('title')
+<title>Корзина </title>
+@endsection
+
+@section('content')
     @auth
+    <div class="container">
+        <h5 class="mt-3 mb-3">Корзина</h5>
     @foreach($cart as $item)
 
     <div>{{$item->title}} - {{$item->pivot->count}} шт.</div>
-    @endforeach
+    @endforeach 
 
+    </div>
     @endauth
     @guest
     <div>Сначало авторизируйтесь</div>
     @endguest
-</body>
-</html>
+@endsection
