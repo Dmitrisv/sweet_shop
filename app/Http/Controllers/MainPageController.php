@@ -65,7 +65,10 @@ class MainPageController extends Controller
         return view('about',compact('posts'));
     }
 
-
+    public function locate()
+    {
+        return view('location');
+    }
 
 
 }
