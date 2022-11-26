@@ -70,5 +70,37 @@ class MainPageController extends Controller
         return view('location');
     }
 
+    public function editable(Request $request)
+    {
+        if(auth()->user()->is_root){
+        $posts = Item::all();
+        return view('editable',compact(['posts']));
+        }        
+    }
 
+    public function edit(Request $request)
+    {
+        $item = Item::find($request->id);
+        return view('edit',compact('item'));
+    }    
+    
+    public function edit_item(Request $request)
+    {
+        $item = Item::find($request->id);
+        $item->update([
+                'title'=>$request->title,
+                'price'=>$request->price,
+                'contry'=>$request->contry,
+                'count'=>$request->count,
+                'category'=>$request->category,
+                "ingredients"=>$request->ingredients
+        ]);
+        return redirect('/edit');
+    }
+    public function delete(Request $request)
+    {
+        $item = Item::find($request->id);
+        $item->delete();
+        return redirect('/edit');
+    }
 }
