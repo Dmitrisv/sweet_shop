@@ -19,7 +19,6 @@ class AuthController extends Controller
     $request->validate([
         'password' => ['required', 'confirmed'],
     ]);
-    // dd($request);
     $user = User::query()->create([
         'username' => $request->username,
         'email' => $request->email,

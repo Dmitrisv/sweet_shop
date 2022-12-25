@@ -31,23 +31,17 @@ Route::post('/add_item',[AddItemController::class,'store']);
 Route::get("/profile",[MainPageController::class,'profile'])->name('profile');
 Route::get("/location",[MainPageController::class,'locate'])->name('location');
 
-
 Route::get('/edit',[MainPageController::class,'editable']);
 Route::get('/edit/{id}',[MainPageController::class,'edit']);
 Route::post('/edit',[MainPageController::class,'edit_item']);
 
-
 Route::get('/delete/{id}',[MainPageController::class,'delete']);
-
 
 Route::get('/view/{id}',[MainPageController::class,'viewproduct']);
 
 Route::get('/cart',[MainPageController::class,'cart'])->name('cart');
 
 Route::get('/about',[MainPageController::class,'about'])->name('about');
-
-
-
 
 Route::post('/storetocart',[MainPageController::class,'addtocart']);
 
@@ -61,5 +55,3 @@ Route::get("/admin", function(){
     }
     return abort(403);
 });
-
-

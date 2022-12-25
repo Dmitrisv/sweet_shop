@@ -80,12 +80,16 @@ class MainPageController extends Controller
 
     public function edit(Request $request)
     {
+        if(auth()->user()->is_root){
         $item = Item::find($request->id);
         return view('edit',compact('item'));
+        }
     }    
     
     public function edit_item(Request $request)
     {
+        if(auth()->user()->is_root){
+
         $item = Item::find($request->id);
         $item->update([
                 'title'=>$request->title,
@@ -97,10 +101,13 @@ class MainPageController extends Controller
         ]);
         return redirect('/edit');
     }
+    }
     public function delete(Request $request)
     {
-        $item = Item::find($request->id);
-        $item->delete();
-        return redirect('/edit');
+        if(auth()->user()->is_root){
+            $item = Item::find($request->id);
+            $item->delete();
+            return redirect('/edit');
+        }
     }
 }
